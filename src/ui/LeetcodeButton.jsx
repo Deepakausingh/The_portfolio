@@ -24,7 +24,7 @@ const LeetcodeButton = () => {
         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
         duration: 0.3 
       }}
-      onClick={() => window.open('https://leetcode.com', '_blank')}
+      onClick={() => window.open('https://leetcode.com/u/deepaksingh804142/', '_blank')}
     >
       <img src={leetcodeLogo} alt="LeetCode" className="h-full w-full object-contain" />
 
