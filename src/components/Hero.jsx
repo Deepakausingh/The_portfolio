@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Profile from '../assets/Profile.png';
+import Profile from '../assets/profile.png';
 import Resume from '../assets/Resume.pdf';
 
 const logSequence = [
