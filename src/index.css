@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --accent: #00f2ff;
@@ -26,7 +23,7 @@
   }
 
   body {
-    @apply antialiased text-white overflow-x-hidden;
+    
     background-color: var(--bg);
     font-family: 'Inter', sans-serif;
     /* Cursor none because we will implement the custom div cursor */
@@ -41,18 +38,18 @@
 
   /* Industrial Design: Sharp Edges, No Border Radius */
   .stark-panel {
-    @apply bg-black/60 backdrop-blur-xl border border-white/10;
+    
     border-radius: 0px !important;
   }
 
   .stark-btn {
-    @apply relative overflow-hidden transition-all duration-300 px-6 py-3 font-sync text-[10px] uppercase tracking-widest border;
+    
     border-radius: 0px;
     border-color: var(--border-color);
   }
 
   .stark-btn:hover {
-    @apply text-black bg-[#00f2ff];
+    
     border-color: var(--accent);
     box-shadow: 0 0 20px var(--accent-dim);
   }
