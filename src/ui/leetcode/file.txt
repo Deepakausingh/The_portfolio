@@ -1,0 +1,17 @@
+src/
+└── ui/
+    ├── LeetcodeButton.jsx
+    └── comp/
+        └── leetcode/
+            ├── LeetcodePopup.jsx
+            ├── api.js
+            ├── useLeetcode.js
+            ├── components/
+            │   ├── Header.jsx
+            │   ├── ProfileCard.jsx
+            │   ├── StatsGrid.jsx
+            │   ├── DifficultyBar.jsx
+            │   ├── ContestCard.jsx
+            │   ├── RecentSolved.jsx
+            │   ├── Loading.jsx
+            │   └── Error.jsx
