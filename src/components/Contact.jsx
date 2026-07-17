@@ -44,7 +44,7 @@ const SocialLinks = [
   },
   {
     id: "CH_04",
-    platform: "TWITTER",
+    platform: "X.COM",
     handle: "@dk_tweets",
     link: "https://x.com/deepakausingh",
     color: "text-sky-400",
