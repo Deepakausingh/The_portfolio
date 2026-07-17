@@ -5,7 +5,7 @@ const SocialLinks = [
     id: "CH_01",
     platform: "GITHUB",
     handle: "@dk-singh",
-    link: "https://github.com",
+    link: "https://github.com/Deepakausingh",
     color: "text-white",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -18,7 +18,7 @@ const SocialLinks = [
     id: "CH_02",
     platform: "LINKEDIN",
     handle: "Deepak Singh",
-    link: "https://linkedin.com",
+    link: "https://www.linkedin.com/in/deepakdan/",
     color: "text-[#00f2ff]",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -32,7 +32,7 @@ const SocialLinks = [
     id: "CH_03",
     platform: "INSTAGRAM",
     handle: "@deepak_studio",
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/deepak_au_001?igsh=M2Z3ZWY2NW82MWky",
     color: "text-pink-500",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -46,7 +46,7 @@ const SocialLinks = [
     id: "CH_04",
     platform: "TWITTER",
     handle: "@dk_tweets",
-    link: "https://twitter.com",
+    link: "https://x.com/deepakausingh",
     color: "text-sky-400",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -57,8 +57,8 @@ const SocialLinks = [
   {
     id: "CH_05",
     platform: "EMAIL",
-    handle: "hello@deepak.dev",
-    link: "mailto:hello@deepak.dev",
+    handle: "deepakausingh@gmail.com",
+    link: "mailto:deepakausingh@gmail.com",
     color: "text-[#00f2ff]",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
