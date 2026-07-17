@@ -24,7 +24,7 @@ const HobbyData = [
     title: "TRAVELLING",
     alias: "PHOTOGRAPHY",
     intensity: "85%",
-    desc: "Capturing industrial architecture and cinematic street scenes through a high-contrast lens.",
+    desc: "Photography teaches me to slow down and notice the beauty in everyday life. Every click captures a unique story, preserving moments that can never be repeated. Through my lens, I see creativity, emotion, and perspective in everything around me.",
     images: [
       Tr_1, Tr_2, Tr_3, Tr_4, Tr_5 
     ],
@@ -39,7 +39,7 @@ const HobbyData = [
     title: "GAMING",
     alias: "GAMING",
     intensity: "92%",
-    desc: "Analyzing competitive mechanics and world-building logic in complex virtual environments.",
+    desc: "Gaming is more than entertainment—it's a way to sharpen my problem-solving skills and strategic thinking. Every challenge teaches patience, adaptability, and perseverance. It reminds me that every setback is simply another chance to improve.",
     images: [
       Game_1, Game_2, Game_3, Game_4, Game_5, Game_6, Game_7, Game_8, Game_9, Game_11, Game_13 
     ],
@@ -54,7 +54,7 @@ const HobbyData = [
     title: "BOOK_READING",
     alias: "READING",
     intensity: "70%",
-    desc: "Deep-diving into system architecture documentation and sci-fi world-building literature.",
+    desc: "Books open doors to new worlds, fresh ideas, and different perspectives. Every page expands my knowledge and fuels my imagination. Reading inspires me to think critically, stay curious, and continue learning every day.",
     images: [
       "https://i.pinimg.com/1200x/13/b9/2b/13b92bc46b6db1a26e558a6393eeed9f.jpg",
       "https://i.pinimg.com/736x/fd/be/b5/fdbeb5662eda8c292f31464eedd47bb4.jpg"
@@ -70,7 +70,7 @@ const HobbyData = [
     title: "MECHANICS",
     alias: "MECHINE_DESIGNING",
     intensity: "60%",
-    desc: "Exploring urban landscapes and discovering new geographic coordinates for visual inspiration.",
+    desc: "Robotics combines creativity with technology to solve real-world problems. I enjoy exploring how software and hardware work together to bring ideas to life. Building and learning about robots inspires me to innovate and create meaningful solutions.",
     images: [
       "https://i.pinimg.com/1200x/07/7f/b0/077fb067e19104f24384549bca63aace.jpg",
       "https://i.pinimg.com/736x/b1/c8/53/b1c8531b780eb39ed1b4b26a8e65ffa7.jpg",
