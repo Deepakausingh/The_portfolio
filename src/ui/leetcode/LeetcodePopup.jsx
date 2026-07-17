@@ -84,7 +84,7 @@ export default function LeetcodePopup({ open, onClose }) {
                                     <div className="relative md:col-span-2 grid grid-cols-2 gap-6 mb-4">
 
                                     {/* Vertical Divider */}
-                                    <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-full bg-[#00f2ff]" />
+                                    <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-[90%] bg-[#00f2ff] mr-4" />
 
                                     <StatsGrid data={data} />
 

@@ -25,7 +25,7 @@ export default function DifficultyBar({ data }) {
   const endDate = new Date();
 
   return (
-    <div className="w-full max-w-5xl mx-auto p-2 shadow-2xl p-2">
+    <div className="w-full max-w-5xl mx-auto p-4 shadow-2xl p-2">
       <div className="flex justify-between items-end mb-8">
         <div>
           <h2 className="mb-4 text-2xl font-sync leading-[0.9] uppercase tracking-tighter">Activity Graph</h2>
