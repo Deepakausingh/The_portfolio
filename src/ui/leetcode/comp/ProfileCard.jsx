@@ -101,7 +101,7 @@ export default function ProfileCard({ data }) {
             src={badgebig}
             alt="Profile"
             onClick={(e) => e.stopPropagation()}
-            className="max-w-auto max-h-[90vh] border border-[#07e6ff]/50 shadow-[0_0_40px_rgba(7,230,255,0.35)]"
+            className="max-w-auto max-h-[600px] border border-[#07e6ff]/50 shadow-[0_0_40px_rgba(7,230,255,0.35)]"
         />
     </div>
 )}
