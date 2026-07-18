@@ -40,7 +40,7 @@ export default function LeetcodePopup({ open, onClose }) {
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
                         onClick={(e) => e.stopPropagation()}
-                        className="w-full max-w-[1000px] max-h-[600px] bg-[#050505]/95 backdrop-blur-xl border border-[#00f2ff]/20 shadow-[0_0_50px_rgba(0,242,255,0.05)] overflow-hidden"
+                        className="w-full max-w-[1000px] max-h-[670px] bg-[#050505]/95 backdrop-blur-xl border border-[#00f2ff]/20 shadow-[0_0_50px_rgba(0,242,255,0.05)] overflow-hidden"
                     >
                         {/* Header */}
                         <div className="px-2 py-[10px] flex items-center justify-between">
@@ -59,7 +59,7 @@ export default function LeetcodePopup({ open, onClose }) {
                         </div>
 
                         {/* Body */}
-                        <div className="max-h-[600px] overflow-y-auto p-8 space-y-8 custom-scrollbar">
+                        <div className="max-h-[600px] p-8 space-y-8 custom-scrollbar">
                             {loading ? (
                                 <div className="flex flex-col items-center justify-center h-64 gap-4">
                                     <div className="w-10 h-10 border-2 border-[#00f2ff]/30 border-t-[#00f2ff] rounded-full animate-spin" />
@@ -77,11 +77,11 @@ export default function LeetcodePopup({ open, onClose }) {
                                     </button>
                                 </div>
                             ) : data ? (
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                     <div className="md:col-span-2">
                                         <ProfileCard data={data} />
                                     </div>
-                                    <div className="relative md:col-span-2 grid grid-cols-2 gap-6 mb-4">
+                                    <div className="relative md:col-span-2 grid grid-cols-2 gap-2">
 
                                     {/* Vertical Divider */}
                                     <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-[90%] bg-[#00f2ff] mr-4" />
