@@ -2,7 +2,16 @@ import React from 'react';
 
 const ProjectData = [
   {
-    id: "01",
+  id: "01",
+  title: "PIPELINE_BUILDER",
+  category: "AI Workflow Builder",
+  tech: ["REACT", "TAILWIND CSS", "Pydantic", "Python", "FastAPI", "Uvicorn"],
+  desc: "Built a visual AI workflow builder that allows users to create and manage pipelines using drag-and-drop nodes. Supports custom components, API integrations, real-time execution flow visualization, and persistent storage of workflows using MongoDB with a Node.js/Express backend.",
+  status: "LIVE_STABLE",
+  link: "https://pipeline-builder-w9ju.vercel.app/"
+},
+  {
+    id: "02",
     title: "3D_Gesture_Interface",
     category: "Embedded HID Simulation",
     tech: ["PYTHON", "MEDIAPIPE", "OPENGL", "PYOPENGL"],
@@ -11,7 +20,7 @@ const ProjectData = [
     link: "#"
   },
   {
-    id: "02",
+    id: "03",
     title: "REAL_TIME_HUMAN_ACTIVITY DETECTOR",
     category: "Computer Vision API",
     tech: ["PYTHON", "TENSORFLOW", "OPENCV", "SCIKIT-LEARN"],
@@ -20,7 +29,7 @@ const ProjectData = [
     link: "#"
   },
   {
-    id: "03",
+    id: "04",
     title: "SOAP_WEBSITE",
     category: "Full-Stack Web Application",
     tech: ["REACT", "TAILWIND", "NODE.JS", "EXPRESS", "MONGODB"],
