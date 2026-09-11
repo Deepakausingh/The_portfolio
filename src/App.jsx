@@ -22,9 +22,9 @@ export default function App() {
     // Spider loader duration
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 8200);
+    }, 7000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer);a
   }, []);
 
   // Show Spider Loader first
