@@ -5,6 +5,27 @@ const CyberCoreLoader = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Inject CSS to prevent scrollbars globally on body/html
+    const styleId = 'cyber-loader-global-styles';
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement('style');
+      style.id = styleId;
+      style.innerHTML = `
+        html, body {
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: hidden !important;
+          width: 100% !important;
+          height: 100% !important;
+          background-color: #000000;
+        }
+        * {
+          box-sizing: border-box;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
     // Inject Google Font Syncopate dynamically into document head
     const fontId = 'google-font-syncopate';
     if (!document.getElementById(fontId)) {
@@ -333,13 +354,17 @@ const styles = {
   container: {
     width: '100vw',
     height: '100vh',
+    maxHeight: '100vh',
+    maxWidth: '100vw',
     backgroundColor: '#000000',
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
+    position: 'fixed', // Using fixed guarantees no unexpected movement
+    top: 0,
+    left: 0,
     margin: 0,
     padding: 0,
     border: 'none',
@@ -364,11 +389,12 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     zIndex: 10,
+    pointerEvents: 'none', // Prevents mouse interaction issues
   },
   percentageText: {
     fontFamily: "'Syncopate', sans-serif",
     fontWeight: 700,
-    fontSize: 'clamp(28px, 6vw, 30px)',
+    fontSize: 'clamp(28px, 6vw, 40px)',
     color: '#00f3ff',
     letterSpacing: '4px',
     marginBottom: '12px',
@@ -376,9 +402,9 @@ const styles = {
   },
   progressTrack: {
     width: '100%',
-    height: '5px',
+    height: '6px',
     background: 'rgba(0, 243, 255, 0.15)',
-    borderRadius: 'None',
+    borderRadius: '3px',
     overflow: 'hidden',
     boxShadow: '0 0 12px rgba(0, 243, 255, 0.25)',
   },
