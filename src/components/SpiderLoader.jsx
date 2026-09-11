@@ -17,7 +17,6 @@ const CyberCoreLoader = () => {
     let height = window.innerHeight;
     let cx = width / 2;
     let cy = height / 2;
-    // Calculate dynamic scaling based on viewport size (base design target ~ 800px)
     let scale = Math.min(width, height) / 750;
 
     const DOT_SIZE = Math.max(1.5, Math.min(2.5, 2 * scale));
@@ -25,7 +24,7 @@ const CyberCoreLoader = () => {
 
     // TIMING & MOTION CONFIGURATION
     const DURATION = 7000; // 7.0 seconds assembly timeline
-    const ROTATION_SPEED = 0.018; // Smooth, continuous spin speed
+    const ROTATION_SPEED = 0.018; // Smooth continuous spin speed
 
     // Cinematic Quintic Ease-Out curve for smooth particle landing
     const easeOutQuint = (x) => 1 - Math.pow(1 - x, 5);
@@ -42,7 +41,7 @@ const CyberCoreLoader = () => {
     let shellNodes = [];
     let outerSpikes = [];
 
-    // Generator function to scale elements according to current screen dimensions
+    // Generator function to scale elements dynamically
     const initParticles = () => {
       coreParticles = [];
       shellNodes = [];
@@ -71,7 +70,7 @@ const CyberCoreLoader = () => {
         });
       }
 
-      // 2. DENSE GEODESIC SHELL (Radius dynamic according to screen)
+      // 2. DENSE GEODESIC SHELL
       const radius = 220 * scale;
       const lats = 36;
       const lons = 50;
@@ -174,7 +173,6 @@ const CyberCoreLoader = () => {
       const elapsed = now - startTime;
       const linearRatio = Math.min(1, elapsed / DURATION);
 
-      // Continuous rotation frame-by-frame
       rotY += ROTATION_SPEED;
       const rotX = 0.25;
 
@@ -303,27 +301,42 @@ const CyberCoreLoader = () => {
   }, []);
 
   return (
-    <div style={styles.container}>
-      <canvas ref={canvasRef} style={styles.canvas} />
+    <>
+      {/* Global CSS Reset Injection to completely eliminate scrollbars */}
+      <style>{`
+        html, body {
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          overflow: hidden !important;
+          background-color: #000000 !important;
+          touch-action: none;
+        }
+      `}</style>
 
-      <div style={styles.progressContainer}>
-        <div style={styles.progressTrack}>
-          <div style={{ ...styles.progressFill, width: `${progress}%` }} />
-        </div>
-        <div style={styles.progressText}>
-          {progress < 100
-            ? `SYSTEM_INITIALIZING ${progress}%`
-            : `SYSTEM_ONLINE // MATRIX_READY`}
+      <div style={styles.container}>
+        <canvas ref={canvasRef} style={styles.canvas} />
+
+        <div style={styles.progressContainer}>
+          <div style={styles.progressTrack}>
+            <div style={{ ...styles.progressFill, width: `${progress}%` }} />
+          </div>
+          <div style={styles.progressText}>
+            {progress < 100
+              ? `SYSTEM_INITIALIZING ${progress}%`
+              : `SYSTEM_ONLINE // MATRIX_READY`}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
 const styles = {
   container: {
     width: '100vw',
-    height: '100vh',
+    height: '100dvh', // Uses Dynamic Viewport Height to prevent mobile scrollbars
     backgroundColor: '#000000',
     overflow: 'hidden',
     display: 'flex',
@@ -331,16 +344,21 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: "'Courier New', Courier, monospace",
-    position: 'relative',
+    position: 'fixed', // Fixed positioning prevents any body shifting
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     margin: 0,
     padding: 0,
-    border: 'none',
-    boxSizing: 'border-box',
   },
   canvas: {
     display: 'block',
     width: '100%',
     height: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
     border: 'none',
     outline: 'none',
     boxShadow: 'none',
@@ -349,13 +367,14 @@ const styles = {
   },
   progressContainer: {
     position: 'absolute',
-    bottom: '5vh',
+    bottom: '6dvh',
     width: '80%',
     maxWidth: '300px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     zIndex: 10,
+    pointerEvents: 'none',
   },
   progressTrack: {
     width: '100%',
