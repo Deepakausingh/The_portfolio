@@ -5,6 +5,16 @@ const CyberCoreLoader = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Inject Google Font Syncopate dynamically into document head
+    const fontId = 'google-font-syncopate';
+    if (!document.getElementById(fontId)) {
+      const link = document.createElement('link');
+      link.id = fontId;
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap';
+      document.head.appendChild(link);
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -26,10 +36,8 @@ const CyberCoreLoader = () => {
     const DURATION = 7000; // 7.0 seconds assembly timeline
     const ROTATION_SPEED = 0.018; // Smooth continuous spin speed
 
-    // Cinematic Quintic Ease-Out curve for smooth particle landing
     const easeOutQuint = (x) => 1 - Math.pow(1 - x, 5);
 
-    // Stagger helper for individual particle landing timing
     const getStaggerProgress = (overallLinearProgress, delayRatio, windowRatio) => {
       if (overallLinearProgress < delayRatio) return 0;
       const progressInWindow = (overallLinearProgress - delayRatio) / windowRatio;
@@ -41,7 +49,6 @@ const CyberCoreLoader = () => {
     let shellNodes = [];
     let outerSpikes = [];
 
-    // Generator function to scale elements dynamically
     const initParticles = () => {
       coreParticles = [];
       shellNodes = [];
@@ -156,7 +163,6 @@ const CyberCoreLoader = () => {
     let animationFrameId;
     const startTime = performance.now();
 
-    // 3D Projection Matrix (Zero camera jittering)
     const project = (p, rX, rY) => {
       const x1 = p.x * Math.cos(rY) - p.z * Math.sin(rY);
       const z1 = p.z * Math.cos(rY) + p.x * Math.sin(rY);
@@ -301,64 +307,48 @@ const CyberCoreLoader = () => {
   }, []);
 
   return (
-    <>
-      {/* Global CSS Reset Injection to completely eliminate scrollbars */}
-      <style>{`
-        html, body {
-          margin: 0 !important;
-          padding: 0 !important;
-          width: 100% !important;
-          height: 100% !important;
-          overflow: hidden !important;
-          background-color: #000000 !important;
-          touch-action: none;
-        }
-      `}</style>
+    <div style={styles.container}>
+      <canvas ref={canvasRef} style={styles.canvas} />
 
-      <div style={styles.container}>
-        <canvas ref={canvasRef} style={styles.canvas} />
+      <div style={styles.progressContainer}>
+        {/* Prominent Percentage Display */}
+        <div style={styles.percentageText}>{progress}%</div>
 
-        <div style={styles.progressContainer}>
-          <div style={styles.progressTrack}>
-            <div style={{ ...styles.progressFill, width: `${progress}%` }} />
-          </div>
-          <div style={styles.progressText}>
-            {progress < 100
-              ? `SYSTEM_INITIALIZING ${progress}%`
-              : `SYSTEM_ONLINE // MATRIX_READY`}
-          </div>
+        <div style={styles.progressTrack}>
+          <div style={{ ...styles.progressFill, width: `${progress}%` }} />
+        </div>
+
+        {/* Dynamic Status Text */}
+        <div style={styles.progressText}>
+          {progress < 100
+            ? `SYSTEM INITIALIZING`
+            : `SYSTEM ONLINE // MATRIX READY`}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 const styles = {
   container: {
     width: '100vw',
-    height: '100dvh', // Uses Dynamic Viewport Height to prevent mobile scrollbars
+    height: '100vh',
     backgroundColor: '#000000',
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    fontFamily: "'Courier New', Courier, monospace",
-    position: 'fixed', // Fixed positioning prevents any body shifting
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
+    position: 'relative',
     margin: 0,
     padding: 0,
+    border: 'none',
+    boxSizing: 'border-box',
   },
   canvas: {
     display: 'block',
     width: '100%',
     height: '100%',
-    position: 'absolute',
-    top: 0,
-    left: 0,
     border: 'none',
     outline: 'none',
     boxShadow: 'none',
@@ -367,36 +357,46 @@ const styles = {
   },
   progressContainer: {
     position: 'absolute',
-    bottom: '6dvh',
-    width: '80%',
-    maxWidth: '300px',
+    bottom: '6vh',
+    width: '85%',
+    maxWidth: '450px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     zIndex: 10,
-    pointerEvents: 'none',
+  },
+  percentageText: {
+    fontFamily: "'Syncopate', sans-serif",
+    fontWeight: 700,
+    fontSize: 'clamp(28px, 6vw, 30px)',
+    color: '#00f3ff',
+    letterSpacing: '4px',
+    marginBottom: '12px',
+    textShadow: '0 0 16px rgba(0, 243, 255, 0.9), 0 0 30px rgba(0, 243, 255, 0.4)',
   },
   progressTrack: {
     width: '100%',
-    height: '4px',
+    height: '5px',
     background: 'rgba(0, 243, 255, 0.15)',
-    borderRadius: '2px',
+    borderRadius: 'None',
     overflow: 'hidden',
-    boxShadow: '0 0 10px rgba(0, 243, 255, 0.2)',
+    boxShadow: '0 0 12px rgba(0, 243, 255, 0.25)',
   },
   progressFill: {
     height: '100%',
     backgroundColor: '#00f3ff',
-    boxShadow: '0 0 12px #00f3ff',
+    boxShadow: '0 0 14px #00f3ff',
     transition: 'width 0.1s linear',
   },
   progressText: {
-    marginTop: '12px',
+    marginTop: '16px',
+    fontFamily: "'Syncopate', sans-serif",
+    fontWeight: 700,
     color: '#00f3ff',
-    fontSize: 'clamp(9px, 2vw, 12px)',
-    letterSpacing: '3px',
+    fontSize: 'clamp(11px, 2.5vw, 16px)',
+    letterSpacing: '4px',
     textAlign: 'center',
-    textShadow: '0 0 8px rgba(0, 243, 255, 0.8)',
+    textShadow: '0 0 10px rgba(0, 243, 255, 0.8)',
     whiteSpace: 'nowrap',
   },
 };
