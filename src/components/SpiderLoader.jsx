@@ -324,7 +324,7 @@ const CyberCoreLoader = () => {
           </div>
           <div style={styles.progressText}>
             {progress < 100
-              ? `SYSTEM_INITIALIZING ${progress}%`
+              ? `LOADING..   ${progress}%`
               : `SYSTEM_ONLINE // MATRIX_READY`}
           </div>
         </div>
